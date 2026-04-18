@@ -1,0 +1,23 @@
+name: Release Artifact
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-release:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install xcodegen
+        run: brew install xcodegen
+      - name: Build release zip
+        run: ./scripts/archive.sh
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ThrottleBar-macOS
+          path: dist/ThrottleBar-macOS.zip
+

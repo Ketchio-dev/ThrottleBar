@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DB264DFE898DF756A855E01 /* AppRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD89BF829B670307098E2877 /* AppRule.swift */; };
+		1424BD9C3265512129598047 /* StatusMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28D36E35F3E31D2DA0316A0 /* StatusMenuView.swift */; };
+		410639B4E4638A63DD365BC6 /* LaunchAtLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF5B0B0014000F60671F68 /* LaunchAtLoginService.swift */; };
+		42FE8B8FC8E089D8AD86E444 /* CPULimitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CCB60B1649A6C66C5FE24 /* CPULimitController.swift */; };
+		6D060B99CAA5101F1100B40C /* CPULimitLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BBEB8EA225FDCF63E0DA0 /* CPULimitLocator.swift */; };
+		87A165D0D6B635C70FD2D5E0 /* RuleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3BFA1FB859E2CDBD875289 /* RuleStore.swift */; };
+		8F0A83CF392AA9D35981502C /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276ADF92DF6A9D5C4C8352C /* AppModel.swift */; };
+		988942A470FC3830DBA9DA8B /* ThrottleBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3A2AE8200CAE2EE3C30461 /* ThrottleBarTests.swift */; };
+		D9116297FC3D7F260354C066 /* ThrottleBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396456C1C3F1B7BF82C868C7 /* ThrottleBarApp.swift */; };
+		ED062BAE20C98E88DC0D65B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAA92B38F7BB9308FDFCA25 /* AppDelegate.swift */; };
+		FBBBB5CAA854C08A7669B582 /* RunningAppSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E928665ED3A5225D4384C /* RunningAppSnapshot.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85C16141CC754757974AD453 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08C39F76BA96595444D7ADCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05C33908FA3AA333F796023C;
+			remoteInfo = ThrottleBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		396456C1C3F1B7BF82C868C7 /* ThrottleBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleBarApp.swift; sourceTree = "<group>"; };
+		501BBEB8EA225FDCF63E0DA0 /* CPULimitLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPULimitLocator.swift; sourceTree = "<group>"; };
+		52C49D27E878199A22E6C592 /* ThrottleBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrottleBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EAA92B38F7BB9308FDFCA25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7276ADF92DF6A9D5C4C8352C /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		960CCB60B1649A6C66C5FE24 /* CPULimitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPULimitController.swift; sourceTree = "<group>"; };
+		A45E928665ED3A5225D4384C /* RunningAppSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningAppSnapshot.swift; sourceTree = "<group>"; };
+		C4AF5B0B0014000F60671F68 /* LaunchAtLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginService.swift; sourceTree = "<group>"; };
+		CA5F79447413FCB463795380 /* ThrottleBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThrottleBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD89BF829B670307098E2877 /* AppRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRule.swift; sourceTree = "<group>"; };
+		D28D36E35F3E31D2DA0316A0 /* StatusMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuView.swift; sourceTree = "<group>"; };
+		ED3A2AE8200CAE2EE3C30461 /* ThrottleBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleBarTests.swift; sourceTree = "<group>"; };
+		EE3BFA1FB859E2CDBD875289 /* RuleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0896023C0E05E6F57EDA28B4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5EAA92B38F7BB9308FDFCA25 /* AppDelegate.swift */,
+				D28D36E35F3E31D2DA0316A0 /* StatusMenuView.swift */,
+				396456C1C3F1B7BF82C868C7 /* ThrottleBarApp.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		0E9ADB1F9DE73658E3B08AC8 /* ThrottleBar */ = {
+			isa = PBXGroup;
+			children = (
+				DB5B81101A05FB3B3904292A /* Models */,
+				B42B2F6132C5659ABEAF4713 /* Services */,
+				0896023C0E05E6F57EDA28B4 /* Sources */,
+				107895A22D0A487C9BA86C8F /* Support */,
+				D0BB6961DCB11B402F45F988 /* ViewModels */,
+			);
+			path = ThrottleBar;
+			sourceTree = "<group>";
+		};
+		107895A22D0A487C9BA86C8F /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				EE3BFA1FB859E2CDBD875289 /* RuleStore.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		13374C0A40704668F3B2E779 /* ThrottleBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED3A2AE8200CAE2EE3C30461 /* ThrottleBarTests.swift */,
+			);
+			path = ThrottleBarTests;
+			sourceTree = "<group>";
+		};
+		B42B2F6132C5659ABEAF4713 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				960CCB60B1649A6C66C5FE24 /* CPULimitController.swift */,
+				501BBEB8EA225FDCF63E0DA0 /* CPULimitLocator.swift */,
+				C4AF5B0B0014000F60671F68 /* LaunchAtLoginService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CF1C4ACF1ABB532407664C00 = {
+			isa = PBXGroup;
+			children = (
+				0E9ADB1F9DE73658E3B08AC8 /* ThrottleBar */,
+				13374C0A40704668F3B2E779 /* ThrottleBarTests */,
+				E0CF1E3FCF1D143C3485F742 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0BB6961DCB11B402F45F988 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7276ADF92DF6A9D5C4C8352C /* AppModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DB5B81101A05FB3B3904292A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD89BF829B670307098E2877 /* AppRule.swift */,
+				A45E928665ED3A5225D4384C /* RunningAppSnapshot.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E0CF1E3FCF1D143C3485F742 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52C49D27E878199A22E6C592 /* ThrottleBar.app */,
+				CA5F79447413FCB463795380 /* ThrottleBarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05C33908FA3AA333F796023C /* ThrottleBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C8981674A01F52455A8981B /* Build configuration list for PBXNativeTarget "ThrottleBar" */;
+			buildPhases = (
+				02C2604B4D1816C573E6562F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThrottleBar;
+			packageProductDependencies = (
+			);
+			productName = ThrottleBar;
+			productReference = 52C49D27E878199A22E6C592 /* ThrottleBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8071FE72E1783E192A3ECC8E /* ThrottleBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04C38F012E9154B5EC47674B /* Build configuration list for PBXNativeTarget "ThrottleBarTests" */;
+			buildPhases = (
+				D912C8526ADD543EB72FCD3B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F42A630447CF1F855100545 /* PBXTargetDependency */,
+			);
+			name = ThrottleBarTests;
+			packageProductDependencies = (
+			);
+			productName = ThrottleBarTests;
+			productReference = CA5F79447413FCB463795380 /* ThrottleBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08C39F76BA96595444D7ADCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					05C33908FA3AA333F796023C = {
+						ProvisioningStyle = Automatic;
+					};
+					8071FE72E1783E192A3ECC8E = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5F640BF46B16C7EC7E634603 /* Build configuration list for PBXProject "ThrottleBar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1C4ACF1ABB532407664C00;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E0CF1E3FCF1D143C3485F742 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05C33908FA3AA333F796023C /* ThrottleBar */,
+				8071FE72E1783E192A3ECC8E /* ThrottleBarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02C2604B4D1816C573E6562F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED062BAE20C98E88DC0D65B0 /* AppDelegate.swift in Sources */,
+				8F0A83CF392AA9D35981502C /* AppModel.swift in Sources */,
+				0DB264DFE898DF756A855E01 /* AppRule.swift in Sources */,
+				42FE8B8FC8E089D8AD86E444 /* CPULimitController.swift in Sources */,
+				6D060B99CAA5101F1100B40C /* CPULimitLocator.swift in Sources */,
+				410639B4E4638A63DD365BC6 /* LaunchAtLoginService.swift in Sources */,
+				87A165D0D6B635C70FD2D5E0 /* RuleStore.swift in Sources */,
+				FBBBB5CAA854C08A7669B582 /* RunningAppSnapshot.swift in Sources */,
+				1424BD9C3265512129598047 /* StatusMenuView.swift in Sources */,
+				D9116297FC3D7F260354C066 /* ThrottleBarApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D912C8526ADD543EB72FCD3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				988942A470FC3830DBA9DA8B /* ThrottleBarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F42A630447CF1F855100545 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05C33908FA3AA333F796023C /* ThrottleBar */;
+			targetProxy = 85C16141CC754757974AD453 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		107CEA04C3ACF5093FBFBA78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		171BE8D3A1C1980204A788D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.opensource.ThrottleBarTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThrottleBar.app/Contents/MacOS/ThrottleBar";
+			};
+			name = Debug;
+		};
+		19ABD8AA0360CA72E61938A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.opensource.ThrottleBarTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThrottleBar.app/Contents/MacOS/ThrottleBar";
+			};
+			name = Release;
+		};
+		1E69BDBBF1F4366D9B3FA972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ThrottleBar/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.opensource.ThrottleBar;
+				PRODUCT_NAME = ThrottleBar;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B5A5DF329B6F58FCBC20F9C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ThrottleBar/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.opensource.ThrottleBar;
+				PRODUCT_NAME = ThrottleBar;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D30BEF702870F9F1A7B4D555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04C38F012E9154B5EC47674B /* Build configuration list for PBXNativeTarget "ThrottleBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				171BE8D3A1C1980204A788D3 /* Debug */,
+				19ABD8AA0360CA72E61938A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		0C8981674A01F52455A8981B /* Build configuration list for PBXNativeTarget "ThrottleBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5A5DF329B6F58FCBC20F9C9 /* Debug */,
+				1E69BDBBF1F4366D9B3FA972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5F640BF46B16C7EC7E634603 /* Build configuration list for PBXProject "ThrottleBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D30BEF702870F9F1A7B4D555 /* Debug */,
+				107CEA04C3ACF5093FBFBA78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08C39F76BA96595444D7ADCD /* Project object */;
+}
