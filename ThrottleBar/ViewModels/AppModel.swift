@@ -33,7 +33,7 @@ final class AppModel: ObservableObject {
             return "exclamationmark.triangle.fill"
         }
 
-        return activeLimiters.isEmpty ? "speedometer" : "speedometer.circle.fill"
+        return activeLimiters.isEmpty ? "speedometer" : "bolt.circle.fill"
     }
 
     var availableApps: [RunningAppSnapshot] {
