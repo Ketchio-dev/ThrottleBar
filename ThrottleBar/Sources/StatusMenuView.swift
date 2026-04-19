@@ -11,6 +11,7 @@ struct StatusMenuView: View {
                     cpulimitSection
                 }
                 controlsSection
+                liveProofSection
                 managedRulesSection
                 runningAppsSection
                 footerSection
@@ -165,6 +166,27 @@ struct StatusMenuView: View {
         }
     }
 
+    private var liveProofSection: some View {
+        cardSection("Live Proof") {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Shows the actual target PID and helper PID when a rule is really attached.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+
+                if model.ruleDiagnostics.isEmpty {
+                    EmptyStateRow(
+                        title: "No runtime data yet",
+                        subtitle: "Add a rule or launch a managed app to see proof here."
+                    )
+                } else {
+                    ForEach(model.ruleDiagnostics) { diagnostic in
+                        RuntimeDiagnosticRow(diagnostic: diagnostic)
+                    }
+                }
+            }
+        }
+    }
+
     private var runningAppsSection: some View {
         cardSection("Running Apps") {
             VStack(alignment: .leading, spacing: 8) {
@@ -187,7 +209,7 @@ struct StatusMenuView: View {
     private var footerSection: some View {
         HStack {
             Label(
-                "\(model.activeLimiters.count) active",
+                "\(model.ruleDiagnostics.filter { $0.isHealthy }.count) active",
                 systemImage: model.activeLimiters.isEmpty ? "pause.circle" : "waveform.path.ecg"
             )
             .font(.caption)
@@ -306,6 +328,13 @@ private struct RuleEditorRow: View {
 
                 Spacer()
 
+                if let diagnostic = model.diagnostic(for: rule) {
+                    StatusPill(
+                        title: diagnostic.statusTitle,
+                        tint: diagnostic.isHealthy ? .green : (rule.isEnabled ? .orange : .secondary)
+                    )
+                }
+
                 StatusPill(
                     title: rule.isEnabled ? model.shortLimitLabel(for: rule.cpuLimit) : "Paused",
                     tint: rule.isEnabled ? .accentColor : .secondary
@@ -366,6 +395,39 @@ private struct RuleEditorRow: View {
                 .buttonStyle(.plain)
                 .font(.caption)
             }
+        }
+        .padding(10)
+        .background(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .fill(Color.primary.opacity(0.035))
+        )
+    }
+}
+
+private struct RuntimeDiagnosticRow: View {
+    let diagnostic: RuleRuntimeSnapshot
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack(spacing: 8) {
+                Text(diagnostic.appName)
+                    .font(.subheadline.weight(.semibold))
+
+                Spacer()
+
+                StatusPill(
+                    title: diagnostic.statusTitle,
+                    tint: diagnostic.isHealthy ? .green : diagnostic.state == .failedToStart ? .red : .orange
+                )
+            }
+
+            Text(diagnostic.statusDetail)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
+            Text(CPULimitScale.detailLabel(for: diagnostic.limit))
+                .font(.caption2.monospacedDigit())
+                .foregroundStyle(.secondary)
         }
         .padding(10)
         .background(

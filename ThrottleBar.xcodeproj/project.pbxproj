@@ -16,6 +16,7 @@
 		87A165D0D6B635C70FD2D5E0 /* RuleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3BFA1FB859E2CDBD875289 /* RuleStore.swift */; };
 		8F0A83CF392AA9D35981502C /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276ADF92DF6A9D5C4C8352C /* AppModel.swift */; };
 		988942A470FC3830DBA9DA8B /* ThrottleBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3A2AE8200CAE2EE3C30461 /* ThrottleBarTests.swift */; };
+		D3E3C949743A121D2E20B507 /* RuleRuntimeSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092FCD4C12FBA9022393D3C /* RuleRuntimeSnapshot.swift */; };
 		D9116297FC3D7F260354C066 /* ThrottleBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396456C1C3F1B7BF82C868C7 /* ThrottleBarApp.swift */; };
 		ED062BAE20C98E88DC0D65B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAA92B38F7BB9308FDFCA25 /* AppDelegate.swift */; };
 		FBBBB5CAA854C08A7669B582 /* RunningAppSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E928665ED3A5225D4384C /* RunningAppSnapshot.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		396456C1C3F1B7BF82C868C7 /* ThrottleBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleBarApp.swift; sourceTree = "<group>"; };
 		501BBEB8EA225FDCF63E0DA0 /* CPULimitLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPULimitLocator.swift; sourceTree = "<group>"; };
+		5092FCD4C12FBA9022393D3C /* RuleRuntimeSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleRuntimeSnapshot.swift; sourceTree = "<group>"; };
 		52C49D27E878199A22E6C592 /* ThrottleBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrottleBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAA92B38F7BB9308FDFCA25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7276ADF92DF6A9D5C4C8352C /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				CD89BF829B670307098E2877 /* AppRule.swift */,
+				5092FCD4C12FBA9022393D3C /* RuleRuntimeSnapshot.swift */,
 				A45E928665ED3A5225D4384C /* RunningAppSnapshot.swift */,
 			);
 			path = Models;
@@ -220,6 +223,7 @@
 				6D060B99CAA5101F1100B40C /* CPULimitLocator.swift in Sources */,
 				7FE45CA19D4F07DADC4CC72C /* CPULimitScale.swift in Sources */,
 				410639B4E4638A63DD365BC6 /* LaunchAtLoginService.swift in Sources */,
+				D3E3C949743A121D2E20B507 /* RuleRuntimeSnapshot.swift in Sources */,
 				87A165D0D6B635C70FD2D5E0 /* RuleStore.swift in Sources */,
 				FBBBB5CAA854C08A7669B582 /* RunningAppSnapshot.swift in Sources */,
 				1424BD9C3265512129598047 /* StatusMenuView.swift in Sources */,

@@ -73,4 +73,37 @@ final class ThrottleBarTests: XCTestCase {
         XCTAssertEqual(CPULimitScale.clamp(5000, logicalCPUCount: 18), 1800)
     }
 
+    func testParseLimiterProcessIDsFindsOnlyMatchingTargetAndBinary() {
+        let output = """
+          101 /opt/homebrew/bin/cpulimit -p 685 -l 395 -i
+          102 /opt/homebrew/bin/cpulimit -p 682 -l 5 -i
+          103 /usr/local/bin/other-tool -p 685 -l 395 -i
+        """
+
+        XCTAssertEqual(
+            CPULimitController.parseLimiterProcessIDs(
+                from: output,
+                binaryPath: "/opt/homebrew/bin/cpulimit",
+                targetPID: 685
+            ),
+            [101]
+        )
+    }
+
+    func testRuleRuntimeSnapshotFormatsActiveProof() {
+        let snapshot = RuleRuntimeSnapshot(
+            ruleID: UUID(),
+            appName: "Google Chrome",
+            state: .active,
+            limit: 100,
+            targetPID: 682,
+            helperPID: 1700,
+            note: "Throttling is live"
+        )
+
+        XCTAssertTrue(snapshot.isHealthy)
+        XCTAssertEqual(snapshot.statusTitle, "Active")
+        XCTAssertEqual(snapshot.statusDetail, "Target PID 682 · Helper PID 1700")
+    }
+
 }

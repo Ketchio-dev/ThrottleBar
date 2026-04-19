@@ -10,6 +10,7 @@ final class AppModel: ObservableObject {
     @Published private(set) var rules: [AppRule] = []
     @Published private(set) var runningApps: [RunningAppSnapshot] = []
     @Published private(set) var activeLimiters: [LimiterSnapshot] = []
+    @Published private(set) var ruleDiagnostics: [RuleRuntimeSnapshot] = []
     @Published private(set) var cpulimitPath: String?
     @Published private(set) var launchAtLoginStatus: SMAppService.Status = .notRegistered
     @Published var launchAtLoginEnabled = false
@@ -123,24 +124,11 @@ final class AppModel: ObservableObject {
     }
 
     func statusText(for rule: AppRule) -> String {
-        if cpulimitPath == nil {
-            return "cpulimit not installed"
-        }
+        diagnostic(for: rule)?.statusDetail ?? "No diagnostics yet"
+    }
 
-        if rule.isEnabled == false {
-            return "Paused"
-        }
-
-        let matching = activeLimiters.filter { $0.ruleID == rule.id }
-        if matching.isEmpty {
-            return "Waiting for app"
-        }
-
-        if matching.count == 1 {
-            return "Limiting 1 process"
-        }
-
-        return "Limiting \(matching.count) processes"
+    func diagnostic(for rule: AppRule) -> RuleRuntimeSnapshot? {
+        ruleDiagnostics.first(where: { $0.ruleID == rule.id })
     }
 
     func launchAtLoginDescription() -> String {
@@ -211,6 +199,11 @@ final class AppModel: ObservableObject {
         let binaryURL = cpulimitPath.map(URL.init(fileURLWithPath:))
         controller.reconcile(binaryURL: binaryURL, rules: rules, runningApps: runningApps)
         activeLimiters = controller.snapshots()
+        ruleDiagnostics = controller.diagnostics(for: rules)
+
+        if let failingDiagnostic = ruleDiagnostics.first(where: { $0.state == .failedToStart }) {
+            lastError = failingDiagnostic.note
+        }
     }
 
     private func updateRule(_ id: UUID, mutate: (inout AppRule) -> Void) {
