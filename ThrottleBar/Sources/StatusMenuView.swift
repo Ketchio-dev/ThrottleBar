@@ -147,6 +147,10 @@ struct StatusMenuView: View {
     private var managedRulesSection: some View {
         cardSection("Rules") {
             VStack(alignment: .leading, spacing: 10) {
+                Text(model.cpuLimitScaleDescription)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+
                 if model.rules.isEmpty {
                     EmptyStateRow(
                         title: "No app rules yet",
@@ -303,7 +307,7 @@ private struct RuleEditorRow: View {
                 Spacer()
 
                 StatusPill(
-                    title: rule.isEnabled ? "\(rule.cpuLimit)%" : "Paused",
+                    title: rule.isEnabled ? model.shortLimitLabel(for: rule.cpuLimit) : "Paused",
                     tint: rule.isEnabled ? .accentColor : .secondary
                 )
 
@@ -318,7 +322,7 @@ private struct RuleEditorRow: View {
             }
 
             HStack(spacing: 10) {
-                Text("CPU")
+                Text("Max CPU")
                     .font(.caption.weight(.medium))
                     .foregroundStyle(.secondary)
 
@@ -327,14 +331,18 @@ private struct RuleEditorRow: View {
                         get: { Double(rule.cpuLimit) },
                         set: { model.setRuleLimit(rule.id, limit: Int($0.rounded())) }
                     ),
-                    in: 5...1800,
+                    in: Double(CPULimitScale.minimumLimit)...Double(model.maxCPULimit),
                     step: 5
                 )
 
-                Text("\(rule.cpuLimit)%")
-                    .font(.caption.monospacedDigit())
-                    .foregroundStyle(.secondary)
-                    .frame(width: 44, alignment: .trailing)
+                VStack(alignment: .trailing, spacing: 1) {
+                    Text(model.shortLimitLabel(for: rule.cpuLimit))
+                        .font(.caption.weight(.medium))
+                    Text("\(rule.cpuLimit)%")
+                        .font(.caption2.monospacedDigit())
+                        .foregroundStyle(.secondary)
+                }
+                .frame(width: 78, alignment: .trailing)
             }
 
             HStack {

@@ -60,8 +60,24 @@ final class AppModel: ObservableObject {
         updateRule(id) { $0.isEnabled = isEnabled }
     }
 
+    var maxCPULimit: Int {
+        CPULimitScale.maxLimit()
+    }
+
+    var cpuLimitScaleDescription: String {
+        CPULimitScale.scaleDescription()
+    }
+
+    func shortLimitLabel(for limit: Int) -> String {
+        CPULimitScale.shortLabel(for: limit)
+    }
+
+    func detailLimitLabel(for limit: Int) -> String {
+        CPULimitScale.detailLabel(for: limit)
+    }
+
     func setRuleLimit(_ id: UUID, limit: Int) {
-        updateRule(id) { $0.cpuLimit = min(max(limit, 5), 1800) }
+        updateRule(id) { $0.cpuLimit = CPULimitScale.clamp(limit) }
     }
 
     func setRuleIncludeChildren(_ id: UUID, includeChildren: Bool) {

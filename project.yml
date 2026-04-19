@@ -27,7 +27,7 @@ targets:
         GENERATE_INFOPLIST_FILE: NO
         INFOPLIST_FILE: ThrottleBar/Resources/Info.plist
         CURRENT_PROJECT_VERSION: 1
-        MARKETING_VERSION: 0.1.0
+        MARKETING_VERSION: 0.1.2
         ENABLE_HARDENED_RUNTIME: NO
         CODE_SIGN_STYLE: Automatic
         COMBINE_HIDPI_IMAGES: YES

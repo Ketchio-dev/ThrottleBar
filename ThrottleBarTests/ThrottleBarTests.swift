@@ -59,4 +59,18 @@ final class ThrottleBarTests: XCTestCase {
         let located = CPULimitLocator.locate(environment: ["PATH": tempDirectory.path])
         XCTAssertEqual(located?.path, binaryURL.path)
     }
+    func testCPULimitScaleExplainsPerCorePercentages() {
+        XCTAssertEqual(CPULimitScale.shortLabel(for: 100), "1.0 core")
+        XCTAssertEqual(CPULimitScale.shortLabel(for: 250), "2.5 cores")
+        XCTAssertEqual(
+            CPULimitScale.scaleDescription(logicalCPUCount: 18),
+            "100% = 1 CPU core · This Mac max 1800% (18 cores)"
+        )
+    }
+
+    func testCPULimitScaleClampsToMachineMaximum() {
+        XCTAssertEqual(CPULimitScale.clamp(1, logicalCPUCount: 18), 5)
+        XCTAssertEqual(CPULimitScale.clamp(5000, logicalCPUCount: 18), 1800)
+    }
+
 }
